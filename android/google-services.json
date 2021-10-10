@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "492229251310",
+    "project_id": "qrfinges",
+    "storage_bucket": "qrfinges.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492229251310:android:4acee21eeb04a2ec0123ff",
+        "android_client_info": {
+          "package_name": "com.qrfinges"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492229251310-hapb3pekhbkd22na2e2n3p4kbqr23e73.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qrfinges",
+            "certificate_hash": "d83de4c17b6c06cbffbc42cc09da67a9e3ae4683"
+          }
+        },
+        {
+          "client_id": "492229251310-oorkr488217ill5pm5eqpfj0e627dqle.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxRai_FOigXVA6ugs-4fk1oA4RKDh3Nlw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492229251310-oorkr488217ill5pm5eqpfj0e627dqle.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
