@@ -3,9 +3,17 @@ import { View, Text, Button, TouchableOpacity, Linking } from "react-native";
 import { styles } from "../component/styles";
 import { MaterialIcons } from "@expo/vector-icons";
 import { BarCodeScanner } from "expo-barcode-scanner";
+<<<<<<< Updated upstream
 import { Camera } from "expo-camera";
 import { useIsFocused } from "@react-navigation/native";
 import { WEBVIEW_KEY } from "../constant/contants";
+=======
+import {CustomButton} from "../component/CustomButton";
+import {CustomButtonNoBorders} from "../component/CustomButtonNoBorders";
+import {handleSubmitText} from "../services/firebase";
+
+
+>>>>>>> Stashed changes
 
 const QRcodeView = (props) => {
   const isFocused = useIsFocused();
@@ -44,7 +52,53 @@ const QRcodeView = (props) => {
       } catch (e) {
         console.log(e);
       }
+<<<<<<< Updated upstream
     })();
+=======
+    
+      return (
+          <ScrollView>
+          <View style={styles.screen}>
+              <View style={styles.content}>
+
+                  <View style={styles.barcodeBox}>
+                  <BarCodeScanner
+                      onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}   
+                      
+                      style={{height: 400, width: 400}}
+                  />               
+          </View>
+          { scanned 
+                  &&
+                  <View style={styles.content}>
+                      <TouchableOpacity 
+                      style= {styles.customBtnGreen}
+                      onPress={ onPressText }>
+                          <Text style={{color: "cornsilk",}}>
+                          { resultScanQR }
+                          </Text>
+                      </TouchableOpacity>
+                      <CustomButton title={'Scan again ?'} onPress={()=> setScanned(false)}>{t("scan_again")}</CustomButton>
+                   </View>
+                   }
+              </View>
+              <MaterialIcons name="add-a-photo" size={24} style={styles.iconContainer} />
+              <TextInput
+                  value={userText}
+                  onChangeText={(text) => setUserText(text)}
+                  placeholder={t("userText")}
+                  placeholderTextColor={"darkgreen"}
+                  style={styles.input}
+              />
+              {error ? <Text style={styles.errors}> {error}</Text> : null}
+              <CustomButtonNoBorders  onPress={(event) => {
+                  console.log("current user " + userText);
+               //   handleSubmitText(userText).then(r => {console.log("user text added successfully")});
+              }}>{t("ok")}</CustomButtonNoBorders>
+          </View>
+          </ScrollView>
+      );
+>>>>>>> Stashed changes
   };
 
   useEffect(() => {

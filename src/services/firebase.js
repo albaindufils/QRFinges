@@ -1,4 +1,4 @@
-// Import the functions you need from the SDKs you need
+/// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {
   doc,
@@ -54,10 +54,12 @@ export const handleSignup = async (email, password, name, firstname) => {
 };
 
 export const handleLogin = async (email, password) => {
+  console.log("email " + email + password);
   return await signInWithEmailAndPassword(auth, email, password);
 };
 
 export const handleSignOut = async () => {
+  console.log(auth);
   try {
     await auth.signOut();
   } catch (e) {
@@ -65,41 +67,65 @@ export const handleSignOut = async () => {
   }
 };
 
+<<<<<<< Updated upstream
+=======
+/*export const handleSubmitText = async (userText ) => {
+
+  const currentUser = "En4JP02hRRWk1EqmVXwPIaU6bfh1";
+
+  console.log("text " + userText + " user " + currentUser);
+
+  return await addDoc(
+      doc(firestore, "users", currentUser, "userText", userText),
+      {
+        userText : userText,
+      });
+}; */
+
+>>>>>>> Stashed changes
 const CURRENT_WALK_RECORD = "custom-walk-id";
 
 export const addRecordLocations = async (
-  location,
-  currentUser = CURRENT_USER_ID,
-  currentWalkRecord = CURRENT_WALK_RECORD
+    location,
+    currentUser = CURRENT_USER_ID,
+    currentWalkRecord = CURRENT_WALK_RECORD
 ) => {
   return await updateDoc(
+<<<<<<< Updated upstream
     doc(firestore, "users", currentUser, "walkRecord", currentWalkRecord),
     {
       startDate: new Date(),
       locations: arrayUnion({ location }),
     }
+=======
+      doc(firestore, "users", currentUser, "walkRecord", currentWalkRecord),
+      {
+        startDate: new Date(),
+        locations: arrayUnion({ location, random: Math.random() }),
+      }
+>>>>>>> Stashed changes
   );
 };
 
 export const startRecordLocations = async (currentUser) => {
   return await addDoc(
-    collection(firestore, "users", currentUser, "walkRecord"),
-    {
-      startDate: new Date(),
-      endDate: null,
-      locations: null,
-    }
+      collection(firestore, "users", currentUser, "walkRecord"),
+      {
+        startDate: new Date(),
+        endDate: null,
+        locations: null,
+      }
   );
 };
 
 export const stopRecordLocations = async (
-  currentUser = CURRENT_USER_ID,
-  currentWalkRecord = CURRENT_WALK_RECORD
+    currentUser = CURRENT_USER_ID,
+    currentWalkRecord = CURRENT_WALK_RECORD
 ) => {
   return await updateDoc(
-    doc(firestore, "users", currentUser, "walkRecord", currentWalkRecord),
-    {
-      endDate: new Date(),
-    }
+      doc(firestore, "users", currentUser, "walkRecord", currentWalkRecord),
+      {
+        endDate: new Date(),
+      }
   );
 };

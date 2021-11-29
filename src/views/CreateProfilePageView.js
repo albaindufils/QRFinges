@@ -76,7 +76,11 @@ const CreateProfilePageView = (props) => {
               setError("");
               handleSignup(email, password, name, firstname)
                 .then(() => {
+<<<<<<< Updated upstream
                   props.navigation.navigate(PROFILE_KEY);
+=======
+                  props.navigation.navigate("profile");
+>>>>>>> Stashed changes
                 })
                 .catch((e) => {
                   var errorCode = e.code;

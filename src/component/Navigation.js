@@ -122,7 +122,7 @@ const CustomDrawerView = (props) => {
   const { state, dispatch } = useUserContext();
 
   const out = async () => {
-    handleSignOut();
+    await handleSignOut();
 
     dispatch({ type: "IS_LOGGED_OFF" });
     props.navigation.navigate(LOGIN_KEY);
