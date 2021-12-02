@@ -17,7 +17,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.hevsedhea.qrfinges",
+<<<<<<< Updated upstream
       "buildNumber": "3.0.1",
+=======
+      "buildNumber": "1.0.5",
+>>>>>>> Stashed changes
       "infoPlist": {
         "UIBackgroundModes": ["location", "fetch"],
         "NSLocationWhenInUseUsageDescription": "App requires geolocation to improve recolting data when in the \"bois de Finges\"",
