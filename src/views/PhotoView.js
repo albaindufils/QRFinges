@@ -62,7 +62,7 @@ const CameraView = (props) => {
 
     const storageRef = ref(photoFirebaseStorage, uri);
 
-    addRefPicture(state.id, uri, date);
+    addRefPicture(state.userId, uri, date);
 
     uploadBytes(storageRef, blob)
       .then(() => {
