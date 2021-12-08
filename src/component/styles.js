@@ -101,7 +101,6 @@ export const styles = StyleSheet.create({
         color: "darkgreen",
         paddingTop: 20,
         paddingLeft: 160,
-        paddingBottom: 100,
         alignItems: "center",
     },
 
