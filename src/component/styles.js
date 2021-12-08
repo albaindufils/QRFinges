@@ -43,11 +43,34 @@ export const styles = StyleSheet.create({
         fontSize : 20,
         paddingBottom : 20,
         paddingTop : 10,
+        paddingLeft : 120
+    },
+
+    secondtitle : {
+        color : 'darkgreen',
+        fontSize : 20,
+        paddingBottom : 20,
+        paddingTop : 10,
+        paddingLeft : 90
+    },
+
+    thirdtitle : {
+        color : 'darkgreen',
+        fontSize : 20,
+        paddingBottom : 20,
+        paddingTop : 10,
+        paddingLeft : 30
     },
 
     iconContainer: {
         color: "darkgreen",
         padding: 10,
+    },
+
+    iconContainerProfile: {
+        color: "darkgreen",
+        padding: 10,
+        paddingLeft : 150 
     },
 
     input: {
@@ -77,7 +100,8 @@ export const styles = StyleSheet.create({
     iconSyncContainer: {
         color: "darkgreen",
         paddingTop: 20,
-        paddingLeft: 150,
+        paddingLeft: 160,
+        paddingBottom: 100,
         alignItems: "center",
     },
 
@@ -96,7 +120,8 @@ export const styles = StyleSheet.create({
     timerLine: {
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingRight: 35,
+        paddingRight: 20,
+        paddingLeft: 10
     },
 
     startContainer: {
@@ -105,6 +130,7 @@ export const styles = StyleSheet.create({
         justifyContent: "space-between",
         padding: 10,
         paddingBottom: 70,
+        
     },
     barcodeBox: {
         marginVertical: 50,

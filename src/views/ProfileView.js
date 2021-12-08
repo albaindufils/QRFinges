@@ -14,14 +14,15 @@ const ProfileView = (props) => {
   return (
     <View style={stylesProfile.screen}>
       <Text style={styles.title}>{t("profileHead")}</Text>
-      <LocationBackgroundView />
-
-      <View style={styles.startContainer}>
-        <AntDesign
-          style={styles.iconContainer}
+      
+      <AntDesign
+          style={styles.iconContainerProfile}
           name={"playcircleo"}
           size={30}
         />
+
+      <View style={styles.startContainer}>
+      <LocationBackgroundView />
         <View style={styles.timerContainer}>
           <View style={styles.timerLine}>
             <Text style={styles.timerText}> {t("start")} </Text>
@@ -38,16 +39,16 @@ const ProfileView = (props) => {
         </View>
       </View>
       <View>
-        <Text style={styles.title}> {t("scanQR")}</Text>
+        <Text style={styles.secondtitle}> {t("scanQR")}</Text>
         <AntDesign
-          style={styles.iconContainer}
+          style={styles.iconContainerProfile}
           name={"qrcode"}
           size={50}
           onPress={() => props.navigation.navigate(QR_CODE_KEY)}
         />
       </View>
       <View>
-        <Text style={styles.title}> {t("syncData")}</Text>
+        <Text style={styles.thirdtitle}> {t("syncData")}</Text>
       </View>
       {/* afficher soit LinearProgress ou l'icon de données selon du status de connexion*/}
       <LinearProgress color="darkgreen" />
