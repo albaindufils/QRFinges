@@ -40,4 +40,5 @@ export const TranslationEN = {
   scan_again: "Scan again ?",
   userText: "Add your comment",
   ok: "Save",
+  comments : "My comments"
 };

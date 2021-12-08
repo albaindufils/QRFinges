@@ -9,6 +9,7 @@ import QRcodeView from "../views/QRcodePageView";
 import CreateProfilePageView from "../views/CreateProfilePageView";
 import HomeView from "../views/HomeView";
 import WebViewer from "../views/InternWebViewer";
+import CommentsView from "../views/CommentsView";
 import { styles } from "../component/styles";
 import {
   createDrawerNavigator,
@@ -31,6 +32,7 @@ import {
   QR_CODE_KEY,
   SUBSCRIBE_KEY,
   WEBVIEW_KEY,
+  COMMENTS_KEY,
 } from "../constant/contants";
 
 const Drawer = createDrawerNavigator();
@@ -79,6 +81,15 @@ const drawerUrls = [
     translateKey: "subscribe",
     displayWhenLogged: false,
     displayWhenNotLogged: true,
+  },
+  {
+    antIcon: "filetext1",
+    pageKey: COMMENTS_KEY,
+
+    navigationScreen: CommentsView,
+    translateKey: "comments",
+    displayWhenLogged: true,
+    displayWhenNotLogged: false,
   },
   {
     antIcon: "profile",

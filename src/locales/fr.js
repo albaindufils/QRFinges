@@ -47,4 +47,5 @@ export const TranslationFR = {
   scan_again : "Scanner encore ?",
   userText : "Ajoutez votre commentaire",
   ok : "OK",
+  comments : "Mes commentaires"
 };
