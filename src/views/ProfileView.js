@@ -12,7 +12,7 @@ const ProfileView = (props) => {
   return (
     <ScrollView>
       <View style={stylesProfile.screen}>
-        <Text style={styles.title}>{t("profileHead")}</Text>
+        <Text style={styles.secondtitle}>{t("profileHead")}</Text>
         <LocationBackgroundView />
 
         <View style={styles.timerLine}>
@@ -23,13 +23,6 @@ const ProfileView = (props) => {
             size={50}
             onPress={() => props.navigation.navigate(QR_CODE_KEY)}
           />
-        </View>
-        <View>
-          <Text style={styles.title}> {t("syncData")}</Text>
-        </View>
-
-        <View>
-          <AntDesign style={styles.iconSyncContainer} name={"sync"} size={30} />
         </View>
       </View>
     </ScrollView>

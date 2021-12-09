@@ -15,8 +15,7 @@ import { Camera } from "expo-camera";
 import { useIsFocused } from "@react-navigation/native";
 import { PROFILE_KEY, WEBVIEW_KEY } from "../constant/contants";
 import { useTranslation } from "react-i18next";
-import { CustomButtonNoBorders } from "../component/CustomButtonNoBorders";
-import { addRecordQRCode, addUserText } from "../services/firebase";
+import { addRecordQRCode } from "../services/firebase";
 import { useUserContext } from "../services/user-context";
 import { askCameraPermission } from "../services/cameraPermission";
 
@@ -50,18 +49,13 @@ const QRcodeView = (props) => {
 
   askCameraPermission();
 
-  const handleUserTextSubmit = async (userText) => {
-    await addUserText(state.userId, userText);
-    setUserText("");
-  };
+  
 
   return (
     <ScrollView>
       <View style={styles.screen}>
         <View style={styles.content}>
-          <Text> {t("scanQR")} </Text>
           <View style={styles.barcodeBox}>
-            <Text> Ici doit être Scanner le QR code </Text>
             <BarCodeScanner
               onBarCodeScanned={handleBarCodeScanned}
               style={{ height: 400, width: 400 }}
@@ -90,36 +84,6 @@ const QRcodeView = (props) => {
           size={24}
           style={styles.iconContainer}
         />
-        <TextInput
-          value={userText}
-          onChangeText={(text) => setUserText(text)}
-          placeholder={t("userText")}
-          placeholderTextColor={"darkgreen"}
-          style={styles.input}
-        />
-        <CustomButtonNoBorders
-          onPress={(event) => {
-            if (userText == "") {
-              Alert.alert(t("titleDialog"), t("addComment"), [
-                {
-                  text: t("ok"),
-                  onPress: () => console.log("OK pressed"),
-                },
-              ]);
-            } else {
-              handleUserTextSubmit(userText).then(() => {
-                Alert.alert(t("titleDialogTextSend"), " ", [
-                  {
-                    text: t("ok"),
-                    onPress: () => props.navigation.navigate(PROFILE_KEY),
-                  },
-                ]);
-              });
-            }
-          }}
-        >
-          {t("ok")}
-        </CustomButtonNoBorders>
       </View>
     </ScrollView>
   );

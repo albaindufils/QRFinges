@@ -6,10 +6,10 @@ import FAQView from "../views/FAQView";
 import LoginPageView from "../views/LogInPageView";
 import QRcodeView from "../views/QRcodePageView";
 import CreateProfilePageView from "../views/CreateProfilePageView";
-import HomeView from "../views/HomeView";
 import WebViewer from "../views/InternWebViewer";
 import CameraView from "../views/PhotoView";
 import { styles } from "../component/styles";
+import CommentsView from "../views/CommentsView";
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -24,13 +24,13 @@ import { useUserContext } from "../services/user-context";
 import {
   CONTACT_KEY,
   FAQ_KEY,
-  HOME_KEY,
   LOGIN_KEY,
   PROFILE_KEY,
   QR_CODE_KEY,
   SUBSCRIBE_KEY,
   WEBVIEW_KEY,
   PHOTO_KEY,
+  COMMENTS_KEY,
 } from "../constant/contants";
 import { ScreenStackHeaderBackButtonImage } from "react-native-screens";
 import { Icon } from "react-native-elements/dist/icons/Icon";
@@ -40,11 +40,11 @@ const Drawer = createDrawerNavigator();
 const drawerUrls = [
   {
     antIcon: "home",
-    pageKey: HOME_KEY,
-    navigationScreen: HomeView,
-    translateKey: "home",
+    pageKey: PROFILE_KEY,
+    navigationScreen: ProfileView,
+    translateKey: "profile",
     displayWhenLogged: true,
-    displayWhenNotLogged: true,
+    displayWhenNotLogged: false,
   },
   {
     antIcon: "contacts",
@@ -65,22 +65,13 @@ const drawerUrls = [
     displayWhenNotLogged: true,
   },
   {
-    antIcon: "infocirlceo",
+    antIcon: "login",
     pageKey: SUBSCRIBE_KEY,
 
     navigationScreen: CreateProfilePageView,
     translateKey: "subscribe",
     displayWhenLogged: false,
     displayWhenNotLogged: true,
-  },
-  {
-    antIcon: "profile",
-    pageKey: PROFILE_KEY,
-
-    navigationScreen: ProfileView,
-    translateKey: "profile",
-    displayWhenLogged: true,
-    displayWhenNotLogged: false,
   },
   {
     antIcon: "webViewer",
@@ -110,7 +101,16 @@ const drawerUrls = [
     displayWhenNotLogged: false,
   },
   {
-    antIcon: "login",
+    antIcon: "filetext1",
+    pageKey: COMMENTS_KEY,
+
+    navigationScreen: CommentsView,
+    translateKey: "comments",
+    displayWhenLogged: true,
+    displayWhenNotLogged: false,
+  },
+  {
+    antIcon: "lock1",
     pageKey: LOGIN_KEY,
 
     navigationScreen: LoginPageView,
@@ -193,9 +193,14 @@ const OverMenu = () => {
         drawer.displayWhenNotLogged == !state.isLoggedIn)
     );
   };
+
+  const isLoggedIn = () => {
+    return state.isLoggedIn;
+  };
   return (
     <Drawer.Navigator
-      initialRouteName="Home"
+      
+      initialRouteName={isLoggedIn() ? "PROFILE" : "LOGIN"}
       drawerContent={(props) => <CustomDrawerView {...props} />}
       screenOptions={{ headerShown: true }}
     >
