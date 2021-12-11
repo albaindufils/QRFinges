@@ -62,7 +62,7 @@ export const TranslationFR = {
   titleDialogTextSend: "Votre commentaire est ajouté",
   personalData: "Mes données personnelles",
   profile: "Accueil",
-  profileHead: "Suivez moi",
+  profileHead: "Participer au projet",
   pseudo: "Pseudo",
   refusalButton: "J'ai encore des questions",
   registerTrace: "Enregistrer mon parcours",
@@ -77,5 +77,13 @@ export const TranslationFR = {
   wrongPass: "Votre e-mail et/ou votre mot de passe ne sont pas corrects",
   comments : "Mes commentaires",
   errorOccurred : "Une erreur s'est produite",
-  camera: "Caméra"
+  camera: "Caméra",
+  feature: "Tracking desactivé",
+  startTrack: "Débuté le :", 
+  locationTrack: "Localisation actuelle :",
+  actualWalk: "Parcours actuel",
+  interact: "Interagissez avec le Bois de Finges",
+  scanQr: "Scanner un QR-Code",
+  takePic: "Envoyer une photo",
+  takeCom: "Envoyer un commentaire"
 };

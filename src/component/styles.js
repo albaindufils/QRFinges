@@ -53,9 +53,10 @@ export const styles = StyleSheet.create({
     secondtitle : {
         color : 'darkgreen',
         fontSize : 20,
-        paddingBottom : 20,
+        paddingBottom : 40,
         paddingTop : 10,
-        paddingLeft : 130
+        paddingLeft : 90,
+        
     },
 
     thirdtitle : {
@@ -85,6 +86,12 @@ export const styles = StyleSheet.create({
         marginBottom: 20,
 
     },
+
+    btnloc: {
+        alignItems: "center",
+        paddingTop: 10
+    },
+
 
     container: {
         flex: 1,
@@ -119,6 +126,15 @@ export const styles = StyleSheet.create({
         color: "darkgreen",
         paddingRight: 30,
         paddingBottom: 20,
+    },
+
+    timerTexts: {
+        fontSize: 14,
+        fontWeight: "400",
+        color: "darkgreen",
+        paddingRight: 30,
+        paddingBottom: 20,
+        paddingLeft: 20
     },
 
     timerLine: {

@@ -35,7 +35,7 @@ export const TranslationEN = {
   pass: "Password",
   personalData: "My personal data",
   profile: "Home",
-  profileHead: "Follow me",
+  profileHead: "Take part in the project",
   pseudo: "Pseudo",
   registerTrace: "Register my walk",
   scan_again: "Scan again ?",
@@ -69,5 +69,13 @@ export const TranslationEN = {
   wrongPass: "Your e-mail or password are not correct",
   comments : "My comments",
   errorOccurred : "An error occurred",
-  camera: "Camera"
+  camera: "Camera",
+  feature: "Trackin disabled",
+  startTrack: "Started on :",
+  locationTrack : "Current location :",
+  actualWalk: "Current walk",
+  interact: "Interact with Le Bois de Finges",
+  scanQr: "Scan a QR-Code",
+  takePic: "Take a photo",
+  takeCom: "Submit a comment"
 };
